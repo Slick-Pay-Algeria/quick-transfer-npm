@@ -14,16 +14,16 @@
 Just run this command line :
 
 ```sh
-npm i @slick-pay/quick-transfer
+npm i @slick-pay-algeria/quick-transfer
 ```
 
 ## How to use?
 
-By using the **@slick-pay/quick-transfer** package, you will be able to **create new payments**, and also **check payments statuses** identified by their transfer ID.
+By using the **@slick-pay-algeria/quick-transfer** package, you will be able to **create new payments**, and also **check payments statuses** identified by their transfer ID.
 
 ### createPayment
 
-To create any new payment, you will use the **createPayment** function provided within the **@slick-pay/quick-transfer** package.
+To create any new payment, you will use the **createPayment** function provided within the **@slick-pay-algeria/quick-transfer** package.
 
 #### Parameters
 
@@ -39,7 +39,7 @@ To create any new payment, you will use the **createPayment** function provided 
 Check the example below :
 
 ```js
-const createPayment = require('@slick-pay/quick-transfer');
+const createPayment = require('@slick-pay-algeria/quick-transfer');
 
 createPayment({
         "rib": "00012345678912345678",
@@ -64,7 +64,7 @@ Meanwhile, when the **catch** method is call, it will retruns an array of string
 
 ### paymentStatus
 
-If you would like to check any payment status, you will use the **paymentStatus** function provided within the **@slick-pay/quick-transfer** package.
+If you would like to check any payment status, you will use the **paymentStatus** function provided within the **@slick-pay-algeria/quick-transfer** package.
 
 #### Parameters
 
