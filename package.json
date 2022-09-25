@@ -1,0 +1,19 @@
+{
+  "name": "@slick-pay/quick-transfer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slick-pay",
+    "quick-transfer",
+    "algeria"
+  ],
+  "author": "slick-pay <[contact@slick-pay.com](mailto:contact@slick-pay.com)>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
