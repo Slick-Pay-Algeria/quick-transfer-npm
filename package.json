@@ -1,6 +1,6 @@
 {
   "name": "@slick-pay-algeria/quick-transfer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node.js module for Slick-Pay Quick Transfer API implementation.",
   "main": "index.js",
   "scripts": {
