@@ -55,7 +55,7 @@ module.exports = function createPayment(params) {
         if (String(params.address).length < 5)
             reject(["The Address field length must be at least 5 chars !"]);
 
-        await axios.post("http://slickpay.azimutbscenter.com/api/slickapiv1/transfer", params)
+        await axios.post("https://slick-pay.com/api/slickapiv1/transfer", params)
             .then((result) => {
                 let response = result.data;
 
@@ -93,7 +93,7 @@ module.exports = function paymentStatus(rib, transferId) {
         if (String(rib).length != 20)
             reject(["The RIB arg length must be 20 !"]);
 
-        await axios.post("http://slickpay.azimutbscenter.com/api/slickapiv1/transfer/transferPaymentSatimCheck", {
+        await axios.post("https://slick-pay.com/api/slickapiv1/transfer/transferPaymentSatimCheck", {
                 rib: rib,
                 transfer_id: transferId,
             })
