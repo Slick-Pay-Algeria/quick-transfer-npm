@@ -39,9 +39,9 @@ To create any new payment, you will use the **createPayment** function provided 
 Check the example below :
 
 ```js
-const createPayment = require('@slick-pay-algeria/quick-transfer');
+const QuickTransfer = require('@slick-pay-algeria/quick-transfer');
 
-createPayment({
+QuickTransfer.createPayment({
         "rib": "00012345678912345678",
         "amount": 1000,
         "fname": "Lorem",
@@ -76,7 +76,9 @@ If you would like to check any payment status, you will use the **paymentStatus*
 Check the example below :
 
 ```js
-paymentStatus("00012345678912345678", 1)
+const QuickTransfer = require('@slick-pay-algeria/quick-transfer');
+
+QuickTransfer.paymentStatus("00012345678912345678", 1)
     .then((result: any) => {
         this.result = result;
     }).catch((err: any) => {
