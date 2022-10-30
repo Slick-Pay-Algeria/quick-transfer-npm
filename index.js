@@ -5,10 +5,11 @@ module.exports = {
     /**
      * Initiate a new payment
      *
-     * @param {any} params  Request params
+     * @param {any}      params   Request params
+     * @param {boolean}  sandbox  Using sandbox env or not
      * @returns {Promise}
      */
-    createPayment: function (params) {
+    createPayment: function (params, sandbox = false) {
 
         return new Promise(async (resolve, reject) => {
 
@@ -57,7 +58,11 @@ module.exports = {
             if (String(params.address).length < 5)
                 reject(["The Address field length must be at least 5 chars !"]);
 
-            await axios.post("https://slick-pay.com/api/slickapiv1/transfer", params)
+            var domainName = sandbox
+                ? "quick.slick-pay.com" 
+                : "dev.quick.slick-pay.com";
+
+            await axios.post(`https://${domainName}/api/slickapiv1/transfer`, params)
                 .then((result) => {
                     let response = result.data;
 
@@ -80,9 +85,10 @@ module.exports = {
      *
      * @param {numeric} rib         The merchant bank account ID
      * @param {integer} transferId  The payment transfer_id provided as a return of the createPayment function
+     * @param {boolean} sandbox     Using sandbox env or not
      * @returns {Promise}
      */
-    paymentStatus: function (rib, transferId) {
+    paymentStatus: function (rib, transferId, sandbox = false) {
 
         return new Promise(async (resolve, reject) => {
 
@@ -95,7 +101,11 @@ module.exports = {
             if (String(rib).length != 20)
                 reject(["The RIB arg length must be 20 !"]);
 
-            await axios.post("https://slick-pay.com/api/slickapiv1/transfer/transferPaymentSatimCheck", {
+            var domainName = sandbox
+                ? "quick.slick-pay.com" 
+                : "dev.quick.slick-pay.com";
+
+            await axios.post(`https://${domainName}/api/slickapiv1/transfer/transferPaymentSatimCheck`, {
                     rib: rib,
                     transfer_id: transferId,
                 })

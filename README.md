@@ -27,12 +27,14 @@ To create any new payment, you will use the **createPayment** function provided 
 
 #### Parameters
 
-* **returnUrl:** <**string**> (optional), the callback URL that the user will be redirected to after the payment was successfully completed from the payment platform
-* **amount:** <**numeric**> (required), the transaction amount in "Dinar algérien" currency, the minimum accepted amount is **100 DA**
-* **rib:** <**string**> (required) It will define the merchant bank account ID, it should be a string with the exact size of 20 characters.
-* **fname:** <**string**> (required) To define the merchant first name, it should be a string with minimum length of 2 characters.
-* **lname:** <**string**> (required) To define the merchant last name, it should be a string with minimum length of 2 characters.
-* **address:** <**string**> (required) To define the merchant address, it should be a string with minimum length of 5 characters.
+* **params:** <**object**> (required), the callback URL that the user will be redirected to after the payment was successfully completed from the payment platform.
+* **sandbox:** <**boolean**> (optional), Will indicate if you want to use a sandbox or live environment (default: false).
+* **params.returnUrl:** <**string**> (optional), the callback URL that the user will be redirected to after the payment was successfully completed from the payment platform.
+* **params.amount:** <**numeric**> (required), the transaction amount in "Dinar algérien" currency, the minimum accepted amount is **100 DA**.
+* **params.rib:** <**string**> (required) It will define the merchant bank account ID, it should be a string with the exact size of 20 characters.
+* **params.fname:** <**string**> (required) To define the merchant first name, it should be a string with minimum length of 2 characters.
+* **params.lname:** <**string**> (required) To define the merchant last name, it should be a string with minimum length of 2 characters.
+* **params.address:** <**string**> (required) To define the merchant address, it should be a string with minimum length of 5 characters.
 
 #### Example
 
@@ -68,8 +70,9 @@ If you would like to check any payment status, you will use the **paymentStatus*
 
 #### Parameters
 
-* **[rib](#parameters):** <**string**> (required)
-* **transferId:** <**number**> (required), Payment transfer ID
+* **rib:** <**string**> (required) Define your own account ID, it should be a string with the exact size of 20 characters.
+* **transferId:** <**number**> (required), Payment transfer ID.
+* **sandbox:** <**boolean**> (optional), Will indicate if you want to use a sandbox or live environment (default: false).
 
 #### Example
 
