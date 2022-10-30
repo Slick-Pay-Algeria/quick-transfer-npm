@@ -58,7 +58,7 @@ module.exports = {
             if (String(params.address).length < 5)
                 reject(["The Address field length must be at least 5 chars !"]);
 
-            var domainName = sandbox
+            var domainName = !sandbox
                 ? "quick.slick-pay.com" 
                 : "dev.quick.slick-pay.com";
 
@@ -101,7 +101,7 @@ module.exports = {
             if (String(rib).length != 20)
                 reject(["The RIB arg length must be 20 !"]);
 
-            var domainName = sandbox
+            var domainName = !sandbox
                 ? "quick.slick-pay.com" 
                 : "dev.quick.slick-pay.com";
 
